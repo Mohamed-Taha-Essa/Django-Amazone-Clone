@@ -7,9 +7,9 @@ product:
     -image
     -review-count
     -sku
-     -related
+    -related
     -description
-      -subtitle
+    -subtitle
     -tags
 
 reviews:
