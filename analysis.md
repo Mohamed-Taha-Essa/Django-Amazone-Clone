@@ -1,4 +1,6 @@
-(class) product:                             
+# (class) product:  
+- brand (relation)
+- product image (relation)                           
 - discription
 - related item
 - name                                       
@@ -8,31 +10,42 @@
 - review count                               
 - sku                                        
 - subtitle                                   
-- tags                                      
-    
-(class) product-images:
-    -images
+- tags           
 
-(class) brand:
+- Note 
+    - add slug to product class.
+    
+# (class) product-images:
+  - images
+  - product ( relation )
+  
+
+# (class) brand:
   - image
   - name
   - item count (can make len on item do't save in db)   
 
-(class) reviews:
+# (class) reviews:
+- product (relation)
 - content
 - rate
-- name
-- image
+- name and image 
+    - i will get it from django user(relation)
 - created at
 - number of review
 
--function:
+# function:
 
  - list
- -detail
- -brand list    
- -brand det     
- -search
- -filter
- -add to cart   
- -add wishlist  
+ - detail
+ - brand list    
+ - brand det     
+- search
+- filter
+- add to cart   
+- add wishlist  
+
+
+
+## Note :
+- add translation to my model.
