@@ -17,7 +17,7 @@ class Product(models.Model):
     name =models.CharField(_('name'),max_length=120)
     flag = models.CharField(_('flag'),max_length=10 ,choices=FLAG_TYPE)
     image =models.ImageField(_('image'), upload_to='product')
-    price =models.models.FloatField(_('price'),)
+    price =models.FloatField(_('price'),)
     sku =models.IntegerField(_('sku'),)
     subtitle =models.TextField(_('subtitle'),max_length=500)
     description =models.TextField(_('description'),max_length=50000)
