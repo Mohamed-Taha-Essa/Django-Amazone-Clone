@@ -18,12 +18,12 @@ class Product(models.Model):
     flag = models.CharField(_('flag'),max_length=10 ,choices=FLAG_TYPE)
     image =models.ImageField(_('image'), upload_to='product')
     price =models.FloatField(_('price'),)
-    sku =models.IntegerField(_('sku'),)
+    sku =models.IntegerField(_('sku'), unique=True)
     subtitle =models.TextField(_('subtitle'),max_length=500)
     description =models.TextField(_('description'),max_length=50000)
 
     tags = TaggableManager()
-    slug =models.SlugField(blank=True,null=True)
+    slug =models.SlugField(blank=True,null=True ,unique=True)
 
     def save(self ,*args, **kwargs):
         self.slug =slugify(self.name)
