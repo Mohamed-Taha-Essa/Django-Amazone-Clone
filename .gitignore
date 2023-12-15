@@ -32,6 +32,8 @@ MANIFEST
 *.manifest
 *.spec
 media/
+media/*.jpg
+media/*.png
 migrations/
 
 # Installer logs
