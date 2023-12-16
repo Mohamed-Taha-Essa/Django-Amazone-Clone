@@ -59,3 +59,5 @@ class Review(models.Model):
     rate = models.IntegerField(_('rate '),choices=[(i,i) for i in range(1,6)])
     created_at =models.DateTimeField(default=timezone.now)
 
+    def __str__(self):
+        return self.product

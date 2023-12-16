@@ -7,6 +7,8 @@ from faker import Faker
 from products.models import Product, ProductImages, Brand, Review  
 import random
 from django.utils.text import slugify
+from django.contrib.auth.models import User
+
 
 
 fake=Faker()
@@ -57,8 +59,18 @@ def seed_product(n):
         )
     print('products added successfully')
 
-
-
+def seed_review(n):
+    user = User.objects.all()
+    product = Product.objects.all()
+    for _ in range(n) :
+        Review.objects.create(
+            user = user[random.randint(0 ,len(user)-1)],
+            product =product[random.randint(0 ,len(product)-1)],
+            content = fake.sentence(nb_words =45),
+            rate = fake.random_element(elements = (i for i in range(1,6))),
+        )
+    print('added review successfully ')
 
 # seed_brands(200)
-seed_product(200)
+# seed_product(200)
+# seed_review(1000)
