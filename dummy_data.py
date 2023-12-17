@@ -71,6 +71,22 @@ def seed_review(n):
         )
     print('added review successfully ')
 
+def seed_product_img(n):
+    imgs =['01.jpg','02.jpg','03.jpg','04.jpg','05.jpg','06.jpg',
+           '07.jpg','08.jpg','09.jpg','10.jpg','11.jpg','12.jpg',
+           '13.jpg','14.jpg','15.jpg','16.jpg','17.jpg','18.jpg',
+           '19.jpg','20.jpg',
+        ]
+    product = Product.objects.all()
+
+    for _ in range(n):
+        ProductImages.objects.create(
+            product =product[random.randint(0 ,len(product)-1)],
+            image = f'productimage/{imgs[random.randint(0,19)]}',
+        )
+    print('image added successfully ')
+
 # seed_brands(200)
-# seed_product(200)
-# seed_review(1000)
+# seed_product(600)
+# seed_review(500)
+# seed_product_img(300)

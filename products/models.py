@@ -35,7 +35,7 @@ class Product(models.Model):
 
 class ProductImages(models.Model):
     product =models.ForeignKey(Product,verbose_name=_('product'),related_name='product_image',on_delete=models.CASCADE)
-    iamge =models.ImageField(_('image'),upload_to='productimage')
+    image =models.ImageField(_('image'),upload_to='productimage')
 
 
 class Brand(models.Model):
