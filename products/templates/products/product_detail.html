@@ -41,13 +41,13 @@
                                 <label class="details-label off">-10%</label>
                             </div>
                             <ul class="details-preview"> 
-                           
-                                    <li><img src="{{object.image.url}}" alt="product"></li>
-                              
+                                {% for image in images %}
+                                    <li><img src="{{image.image.url}}" alt="product"></li>
+                                {% endfor %}                              
                             </ul>
                             <ul class="details-thumb">
                                 {% comment %} <h2> ({{object.product_image.all|length}})</h2> {% endcomment %}
-                                {% for image in object.product_image.all %}
+                                {% for image in images %}
                                     <li><img src="{{image.image.url}}" alt="product"></li>
                                 {% endfor %}
                             </ul>
@@ -180,9 +180,9 @@
                             </table>
                         </div> {% endcomment %}
                         <div class="product-details-frame">
-                            <h3 class="frame-title">Reviews ({{object.review_product.all |length}})</h3>
+                            <h3 class="frame-title">Reviews ({{reviews |length}})</h3>
                             <ul class="review-list">
-                                {% for review in object.review_product.all  %}
+                                {% for review in reviews  %}
                                     <li class="review-item">
                                         <div class="review-media">
                                             <a class="review-avatar" href="#">
