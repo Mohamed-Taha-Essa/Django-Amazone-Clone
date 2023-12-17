@@ -34,6 +34,8 @@ MANIFEST
 media/
 media/*.jpg
 media/*.png
+
+
 migrations/
 
 # Installer logs
