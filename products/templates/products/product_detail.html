@@ -18,7 +18,7 @@
                 <h2>product simple</h2>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item"><a href="shop-4column.html">shop-4column</a></li>
+                    <li class="breadcrumb-item"><a href="shop-4column.html">{{object.name}}</a></li>
                     <li class="breadcrumb-item active" aria-current="page">product-simple</li>
                 </ol>
             </div>
@@ -56,21 +56,21 @@
                     <div class="col-lg-6">
                         <ul class="product-navigation">
                             <li class="product-nav-prev">
-                                <a href="#">
+                                <a href="/products/{{ prev_product.slug }}">
                                     <i class="icofont-arrow-left"></i>
                                     prev product
                                     <span class="product-nav-popup">
-                                        <img src="images/product/02.jpg" alt="product">
+                                        <img src="{{prev_product.image.url}}" alt="product">
                                         <small>green chilis</small>
                                     </span>
                                 </a>
                             </li>
                             <li class="product-nav-next">
-                                <a href="#">
+                                <a href="/products/{{ next_product.slug }}">
                                     next product
                                     <i class="icofont-arrow-right"></i>
                                     <span class="product-nav-popup">
-                                        <img src="images/product/03.jpg" alt="product">
+                                        <img src="{{next_product.image.url}}" alt="product">
                                         <small>green chilis</small>
                                     </span>
                                 </a>
