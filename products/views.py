@@ -7,6 +7,7 @@ from django.db import models
 
 class ProductList(ListView):
     model = Product
+    paginate_by =50
 
 
 class ProductDetail(DetailView):
@@ -41,14 +42,15 @@ class ProductDetail(DetailView):
 
 class BrandList(ListView):
     model =Brand
-    
+    paginate_by =50
+
    
     
     
 class BrandDetail(ListView):
     model =Product
     template_name ='products/brand_detail.html'
-
+    paginate_by =50
     def get_queryset(self):
         brand = Brand.objects.get(slug = self.kwargs['slug'])
         queryset = super().get_queryset().filter(brand =brand)
