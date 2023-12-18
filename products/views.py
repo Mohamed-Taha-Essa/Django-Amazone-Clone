@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .models import Product ,Brand , Review,ProductImages
 from django.views.generic import ListView ,DetailView
-from django.db import models
+from django.db.models import Count
 
 # Create your views here.
 
@@ -40,10 +40,22 @@ class ProductDetail(DetailView):
         return context
     
 
+# class BrandList(ListView):
+#     model =Brand
+#     paginate_by =50
 class BrandList(ListView):
-    model =Brand
+    model = Brand
     paginate_by =50
 
+    def get_queryset(self):
+        # Annotate each brand object with the count of related products
+        return Brand.objects.annotate(num_products=Count('product_brand'))
+
+    # Optionally, you can pass this count to the context if needed
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['brand_product_counts'] = {brand.name: brand.num_products for brand in context['object_list']}
+        return context
    
     
     
