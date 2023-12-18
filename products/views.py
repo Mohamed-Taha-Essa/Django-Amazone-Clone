@@ -51,11 +51,6 @@ class BrandList(ListView):
         # Annotate each brand object with the count of related products
         return Brand.objects.annotate(num_products=Count('product_brand'))
 
-    # Optionally, you can pass this count to the context if needed
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['brand_product_counts'] = {brand.name: brand.num_products for brand in context['object_list']}
-        return context
    
     
     
