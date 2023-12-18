@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from .models import Product ,Brand , Review,ProductImages
 from django.views.generic import ListView ,DetailView
+from django.db import models
+
 # Create your views here.
 
 class ProductList(ListView):
@@ -19,25 +21,27 @@ class ProductDetail(DetailView):
         #activate next and prev product 
         # Get the current product
         current_product = self.get_object()
-
         # Get the queryset of all products
         all_products = Product.objects.all()
-
         # Find the index of the current product in the queryset
         current_index = list(all_products).index(current_product)
-
         # Get the next product (if exists)
         next_product = None
         if current_index < len(all_products) - 1:
             next_product = all_products[current_index + 1]
-
         # Get the previous product (if exists)
         prev_product = None
         if current_index > 0:
             prev_product = all_products[current_index - 1]
-
         context['next_product'] = next_product
         context['prev_product'] = prev_product
     
         return context
     
+
+class BrandList(ListView):
+    model =Brand
+
+    
+class BrandDetail(DetailView):
+    model =Brand
