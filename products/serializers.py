@@ -7,6 +7,11 @@ class ReviewSerializers(serializers.ModelSerializer):
         model =Review 
         fields = ['user' , 'content' ,'rate' ,'created_at']
 
+class ProductImagesSerializers(serializers.ModelSerializer):
+    class Meta:
+        model =ProductImages 
+        fields = ['image']
+
 class ProductListSerializer(serializers.ModelSerializer):
     brand = serializers.StringRelatedField()
     
@@ -14,12 +19,7 @@ class ProductListSerializer(serializers.ModelSerializer):
         model = Product
         fields ='__all__'
 
-class ProductDetailSerializer(serializers.ModelSerializer):
-    brand = serializers.StringRelatedField()
-    review = ReviewSerializers(source ='review_product' ,many =True)
-    class Meta:
-        model = Product
-        fields ='__all__'
+
 
 class BrandListSerializer(serializers.ModelSerializer):
     class Meta:
@@ -29,4 +29,14 @@ class BrandListSerializer(serializers.ModelSerializer):
 class BrandDetailSerializer(serializers.ModelSerializer):
     class Meta:
         model = Brand
+        fields ='__all__'
+
+
+
+class ProductDetailSerializer(serializers.ModelSerializer):
+    brand = BrandDetailSerializer()
+    review = ReviewSerializers(source ='review_product' ,many =True)
+    images = ProductImagesSerializers(source ='product_image' ,many = True)
+    class Meta:
+        model = Product
         fields ='__all__'
