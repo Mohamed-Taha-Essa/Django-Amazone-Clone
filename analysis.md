@@ -1,3 +1,4 @@
+# App product
 # (class) product:  
 - brand (relation)
 - product image (relation)                           

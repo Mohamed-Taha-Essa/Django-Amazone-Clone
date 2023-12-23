@@ -23,13 +23,6 @@ def seed_brands(num_brands):
     
     print('brand addec successfully')
 
-def unique_slug(name):
-    slug = slugify(name)[:50]  # Truncate slug to a reasonable length
-    counter = 1
-    while Product.objects.filter(slug=slug).exists():
-        slug = f"{slug}-{counter}"
-        counter += 1
-    return slug
 
 
 def seed_product(n):
@@ -42,8 +35,7 @@ def seed_product(n):
     brand =Brand.objects.all()
     for _ in range(n):
         name = fake.company()  # Generate a fake company name
-        slug =unique_slug(name)
-
+        
         Product.objects.create(
             brand =brand[random.randint(0,len(brand)-1)] ,
             name = name,
@@ -53,8 +45,6 @@ def seed_product(n):
             sku=fake.unique.random_number(digits=5),
             subtitle=fake.sentence(nb_words=60),
             description=fake.paragraph(nb_sentences = 80),
-            slug =slug
-            
 
         )
     print('products added successfully')
