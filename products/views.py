@@ -97,7 +97,10 @@ def mydebug(request):
 ## Annotate -----add virtual new column in data that they back from db to frontend    
     # data = Product.objects.annotate(new_col=Value(20))
     # data = Product.objects.annotate(max_col= Value(max_price))
-    data = Product.objects.annotate(price_wit_tax=F('price')*1.25)
+    # data = Product.objects.annotate(price_wit_tax=F('price')*1.25) 
+   
+#    don't work
+    data = Product.objects.annotate(max_price=Max('price')) 
 
     return render(request ,'products/debug.html' ,{'data':data})
 
@@ -144,10 +147,7 @@ class ProductDetail(DetailView):
 class BrandList(ListView):
     model = Brand
     paginate_by =50
-
-    def get_queryset(self):
-        # Annotate each brand object with the count of related products
-        return Brand.objects.annotate(num_products=Count('product_brand'))
+    queryset = Brand.objects.annotate(num_products=Count('product_brand'))
 
    
     
@@ -164,6 +164,9 @@ class BrandDetail(ListView):
     
     def get_context_data(self, **kwargs) :
         context = super().get_context_data(**kwargs)
-        context["brand"] =  Brand.objects.get(slug = self.kwargs['slug'])
+        # error annotate don't come with get it comw with kteer
+        # context["brand"] =  Brand.objects.get(slug = self.kwargs['slug']).annotate(num_products=Count('product_brand'))
+        #but filter return list so i will return first item
+        context["brand"] =  Brand.objects.filter(slug = self.kwargs['slug']).annotate(num_products=Count('product_brand'))[0]
         return context
     
