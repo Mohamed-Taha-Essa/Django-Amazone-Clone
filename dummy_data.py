@@ -45,7 +45,7 @@ def seed_product(n):
             sku=fake.unique.random_number(digits=5),
             subtitle=fake.sentence(nb_words=60),
             description=fake.paragraph(nb_sentences = 80),
-
+            quantity = random.randint(1, 100)
         )
     print('products added successfully')
 
@@ -78,5 +78,5 @@ def seed_product_img(n):
 
 # seed_brands(200)
 # seed_product(600)
-# seed_review(500)
-# seed_product_img(300)
+seed_review(600)
+seed_product_img(800)

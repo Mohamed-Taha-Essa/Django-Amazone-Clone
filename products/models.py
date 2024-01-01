@@ -21,6 +21,7 @@ class Product(models.Model):
     sku =models.IntegerField(_('sku'), unique=True)
     subtitle =models.TextField(_('subtitle'),max_length=500)
     description =models.TextField(_('description'),max_length=50000)
+    quantity = models.IntegerField()
 
     tags = TaggableManager()
     slug =models.SlugField(blank=True,null=True ,unique=True)
