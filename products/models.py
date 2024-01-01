@@ -34,6 +34,22 @@ class Product(models.Model):
         return self.name
     
 
+    def review_count(self ):
+        reviews= self.review_product.all().count()
+        return reviews
+    
+    def avg_rate(self ):
+        reviews = self.review_product.all()
+        temp =0 
+        if len(reviews)>0:
+            for obj in reviews:
+                temp +=obj.rate
+            avg_rate = temp /len(reviews)
+        else :
+            avg_rate =0 
+        return avg_rate
+    
+
 class ProductImages(models.Model):
     product =models.ForeignKey(Product,verbose_name=_('product'),related_name='product_image',on_delete=models.CASCADE)
     image =models.ImageField(_('image'),upload_to='productimage')
