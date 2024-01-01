@@ -40,9 +40,10 @@ INSTALLED_APPS = [
     #packages
     'taggit',
     'rest_framework',
-     'django_filters',
-      'drf_yasg',
+    'django_filters',
+    'drf_yasg',
     "debug_toolbar",
+
     #apps
     'products',
 ]
@@ -59,6 +60,8 @@ MIDDLEWARE = [
     "debug_toolbar.middleware.DebugToolbarMiddleware",
 
     'django.middleware.security.SecurityMiddleware',
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
+
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -74,8 +77,6 @@ INTERNAL_IPS = [
     "127.0.0.1",
     # ...
 ]
-
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
