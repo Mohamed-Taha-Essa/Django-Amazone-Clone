@@ -46,6 +46,7 @@ INSTALLED_APPS = [
 
     #apps
     'products',
+    'settings'
 ]
 
 #rest api
