@@ -54,4 +54,4 @@
 # video 37 :
   - using taggit restframework to show it in api.
   - return in view the what it want to show in home (product ,reviews,brand)
-  - 
+  - using another technology using in api (ninja ,grpc)
