@@ -49,3 +49,9 @@
   - to return the data that show on all pages in your project must using [context_processor]
   - when usin [context_processor] to return data it return in almost page in project and the data don't change for long time so we cand using caching to solve this probelm.
   - using library on caching or use it manually.
+
+
+# video 37 :
+  - using taggit restframework to show it in api.
+  - return in view the what it want to show in home (product ,reviews,brand)
+  - 
