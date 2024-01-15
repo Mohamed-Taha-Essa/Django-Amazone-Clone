@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.db.models import Count
 from products.models import Product ,Review,Brand
+
 # Create your views here.
 def home(request):
     new_product = Product.objects.filter(flag ='New')[:10]

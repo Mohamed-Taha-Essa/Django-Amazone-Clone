@@ -1,10 +1,10 @@
-# video 31 build view and add dummy_data:
+# video 31 build view and add dummy_data
   - understand using of fake library to add data .
   - add image manualy to media and added path using fake to db .
   - in the up of file must add tow lines to django know that file belong to him as we using in it ORM .
 
 
-# video 33
+# video 33 :
   - add logic from template make loading on browser and make website slow.
   - add logic from view or model make your website faster .
   - best practice add logic in view as you can use it in every place in your project until(API)
@@ -48,10 +48,17 @@
   - must start with finish home page in your project .
   - to return the data that show on all pages in your project must using [context_processor]
   - when usin [context_processor] to return data it return in almost page in project and the data don't change for long time so we cand using caching to solve this probelm.
+  - the best server to using cacching is reddis.
+  - if u have problem to setup reddis in windows no problem when usin docker it will be fine as reddis built on linux.
+  - setup redis on your pc and redis for python on Virtual Envirmonent and add redis setting for django .
   - using library on caching or use it manually.
 
 
 # video 37 :
   - using taggit restframework to show it in api.
-  - return in view the what it want to show in home (product ,reviews,brand)
-  - using another technology using in api (ninja ,grpc)
+  - import in setting.view  what we want to show in home (product ,reviews,brand)
+  - we can using another technology to generat api (ninja build on new tech in python pendatic(fast& like fast api) ,grpc)
+  - 
+
+
+  
