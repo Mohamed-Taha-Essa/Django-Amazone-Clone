@@ -70,4 +70,11 @@
 - the action in front end in form detect where you want to sent data from form.
 - to recieve data from form fields all fields must have name.
 - if i have an integer field in (model db) when recieve it from front-end the field must have a value .
-- using in template user.is authenticated.  
+- using in template user.is authenticated to show login or image of user.
+- create app for order.
+- create app account to build model address to using it in order.
+- when i have multible fields repeated and other not repeated it best practice to build it in tow model like(product & prouct_images ,product & reviews ,orders & order_detail)
+- when i build a function and i probably using it in more places it's best practic to create folder  
+  (utils/name_function.py)
+- save price of product on order as the price maybe will change on the future.
+- when i want tow add 7 day on datefield we must using timedelta .

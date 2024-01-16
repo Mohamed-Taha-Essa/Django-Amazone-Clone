@@ -1,5 +1,5 @@
 # App product
-# (class) product:  
+## (class) product:  
 - brand (relation)
 - product image (relation)                           
 - discription
@@ -16,17 +16,17 @@
 - Note 
     - add slug to product class.
     
-# (class) product-images:
+## (class) product-images:
   - images
   - product ( relation )
   
 
-# (class) brand:
+## (class) brand:
   - image
   - name
   - item count (can make len on item do't save in db)   
 
-# (class) reviews:
+## (class) reviews:
 - product (relation)
 - content
 - rate
@@ -36,17 +36,47 @@
 - number of review
 
 # function:
-
- - list
- - detail
- - brand list    
- - brand det     
+- product list 
+- product detail
+- brand list    
+- brand det     
 - search
 - filter
 - add to cart   
 - add wishlist  
 
-
-
 ## Note :
 - add translation to my model.
+  ----------------------------------------------------------------------------------------------------------------
+
+# App order :
+## class Order
+- user (relation with user django)
+- code 
+- Status ('Recieved' , 'Processed' ,'Shipped' ,'Delivered' )
+- Discount
+- Order Time
+- Delivery Time
+- Delivery address
+- cpupon (relation forienkey) 
+- total_with_coupon
+
+## class OrderDetail 
+- Order (relation ship)
+- product (relation)
+- Quantity
+- Total
+- Price
+
+## class Coupon 
+- code 
+- start date
+- end date
+- quatity
+- discount  
+
+---------------------------------------------------------------------------------------------------------------------
+# App account
+## class 
+- user 
+- address 
