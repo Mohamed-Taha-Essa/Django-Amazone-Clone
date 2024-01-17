@@ -1,7 +1,6 @@
 from django.urls import path
 from .views import ProductList ,ProductDetail ,BrandDetail,BrandList , mydebug,add_review
 from . import api
-
 urlpatterns = [
     path("debug", mydebug),
     path("brands", BrandList.as_view()),

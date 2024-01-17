@@ -39,12 +39,13 @@ schema_view = get_schema_view(
 
 urlpatterns = [
     path("__debug__/", include("debug_toolbar.urls")),
-    path('/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
+    path('', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path("__debug__/", include("debug_toolbar.urls")),
     path("", include('settings.urls')),
     path('api-auth/', include('rest_framework.urls')),
     path('admin/', admin.site.urls),
     path('products/', include('products.urls')),
+    path('orders/', include('orders.urls')),
 ]
 urlpatterns +=static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns+= static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
