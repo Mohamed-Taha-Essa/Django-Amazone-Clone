@@ -78,3 +78,21 @@
   (utils/name_function.py)
 - save price of product on order as the price maybe will change on the future.
 - when i want tow add 7 day on datefield we must using timedelta .
+- (autonow & autonow_add) apear only only on data base so when i using to date to apear for admin u must using default.
+
+
+## video 38 (Orders part2 )
+- lazy django ORM -> meanin if i have tow operatin like(filter & order_by) and i will apply them on the DB, Django ORM merge them on one query and apply them on DB.
+-  queyset cache -> the variable that contain the result of applying the query on DB & can apply on it another query ,then result come from the variable don't go to DB.
+-  example: 
+      -  data = products.objects.all()
+      -  data2 =data.filter('name') --->here I am using queryset cach
+- using data inside cart to create order object when payment.
+- the price in cart come from DataBase(product.price) as the price maybe change befor payment.
+- the price in orders come from (orders.price) as i will payment immediately . 
+- create model delivery fee in setting app.
+- build views for order app .
+- get or create cart for user logged in .
+- add get_cart to context processor.
+- show cart in base.
+- add function on model to calculate total price and make it @property to using it any where as acolumn.
