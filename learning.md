@@ -98,4 +98,9 @@
 - add function on model to calculate total price and make it @property to using it any where as acolumn.
 - build view add-to-cart to add object to cart .
 
-## still activate add to cart or build it on view 
+
+## video 39 (orders-part3)
+- show produts detail from cart in checkout page.
+- how can apply copoun?
+- null---> apply on Data Base.
+- blank--> apply on django form.

@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models.aggregates import Sum
 from django.contrib.auth.models import User
 from django.utils import timezone
 from utils.generate_code import generate_code
@@ -55,10 +56,10 @@ class Cart(models.Model):
     
     @property
     def cart_total(self):
-        total = 0.0 
+        total = 0
         for item in self.cart_detail.all():
-            total = float(total or 0) + float(item.total or 0)
-
+            total = total  + item.total 
+        # total = self.cart_detail.aggregate(Sum('total'))['total__sum'] or 0.00
         return round(total,2)
 
 
@@ -71,7 +72,7 @@ class CartDetail(models.Model):
 class Coupon(models.Model):
     code = models.CharField( max_length=20)
     start_date = models.DateField(default = timezone.now)
-    end_date = models.DateField()
+    end_date = models.DateField(null = True ,blank =True)
     quantity =models.IntegerField()
     discount = models.FloatField()
 
