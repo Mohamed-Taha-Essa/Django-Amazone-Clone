@@ -55,9 +55,9 @@ class Cart(models.Model):
     
     @property
     def cart_total(self):
-        total = 0 
+        total = 0.0 
         for item in self.cart_detail.all():
-            total += item.total
+            total = float(total or 0) + float(item.total or 0)
 
         return round(total,2)
 

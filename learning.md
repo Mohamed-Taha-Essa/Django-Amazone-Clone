@@ -87,12 +87,15 @@
 -  example: 
       -  data = products.objects.all()
       -  data2 =data.filter('name') --->here I am using queryset cach
-- using data inside cart to create order object when payment.
+- using data inside cart(model) to create order object when payment.
 - the price in cart come from DataBase(product.price) as the price maybe change befor payment.
 - the price in orders come from (orders.price) as i will payment immediately . 
 - create model delivery fee in setting app.
 - build views for order app .
 - get or create cart for user logged in .
-- add get_cart to context processor.
-- show cart in base.
+- build simple view (get_cart_data) and using in context processor to check if user have a cart or create new one for hem.
+- show cart_detain in base as I return data from context processor.
 - add function on model to calculate total price and make it @property to using it any where as acolumn.
+- build view add-to-cart to add object to cart .
+
+## still activate add to cart or build it on view 
