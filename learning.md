@@ -1,4 +1,20 @@
-# video 31 build view and add dummy_data
+## video 27 Django Template & API
+- using rest API in 3 cases :
+  - mobile App
+  - JS framework (react ,angular ,vue)
+  - microservice archetecture.
+- Monolithic architecture -->simple or general of using building website (usint one DB)
+- Micrservice architecture----> complex (using on big website and very cost) (divide website to multible service every service using ther DB)
+- SAAS & Multitennant
+- api file instead of views file (for arrange code)
+- serializer file is like form file (responsible for convert data to json)
+
+
+## video 28 Django API part2
+- querysert ----> the model what you want to apply api on it .
+
+
+## video 31 build view and add dummy_data
 
 - understand using of fake library to add data .
 - add image manualy to media and added path using fake to db .
@@ -104,3 +120,10 @@
 - how can apply copoun?
 - null---> apply on Data Base.
 - blank--> apply on django form.
+
+---------- API---------
+- it is best to recieve user in url when using API.--> path('api/<str:username>/orders' ,OrderListAPI.as_view())
+- how can you override on query order.objects.all() and apply filter with username?
+  - using get_query_set() why??
+    - (working with maing query) as return maing query and doing filter on it.
+- 

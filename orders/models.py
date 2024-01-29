@@ -28,13 +28,9 @@ class Order(models.Model):
         week = datetime.timedelta(days=7)
         self.delivery_time = self.order_time + week
         super(Order , self).save(*args, **kwargs )
-    
-
     def __str__(self):
-       
         return (self.order_detail.all()[0].product.name)
     
-
 class OrderDetail(models.Model):
     order = models.ForeignKey(Order, related_name='order_detail', on_delete=models.CASCADE)
     product =models.ForeignKey(Product,related_name='orderdetail_product', on_delete=models.SET_NULL ,null=True,blank=True)
@@ -76,10 +72,11 @@ class Coupon(models.Model):
     quantity =models.IntegerField()
     discount = models.FloatField()
 
-#add a week on start date in save fun
+#add a week on start date in save fun if not added
     def save(self , *args, **kwargs):
-        week = datetime.timedelta(days=7)
-        self.end_date = self.start_date + week
+        if not self.end_date:
+            week = datetime.timedelta(days=7)
+            self.end_date = self.start_date + week
         super(Coupon , self).save(*args, **kwargs )
     
 

@@ -42,9 +42,7 @@ def checkout(request):
                 })
    
     sub_total = cart.cart_total
-    discount = 0
-
-   
+    discount = 0  
     total = sub_total + delivery_fee
     return render(request ,'orders/checkout.html',{
         'cart_detail':cart_detail,
