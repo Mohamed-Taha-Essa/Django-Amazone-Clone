@@ -122,8 +122,10 @@
 - blank--> apply on django form.
 
 ---------- API---------
+I want to show in api what i showed in views(orders list,detail,applycoupon)
 - it is best to recieve user in url when using API.--> path('api/<str:username>/orders' ,OrderListAPI.as_view())
 - how can you override on query order.objects.all() and apply filter with username?
   - using get_query_set() why??
     - (working with maing query) as return maing query and doing filter on it.
-- 
+
+- in order_detail_api --> no update no filter no delete no search as i bought the products and I was payment.

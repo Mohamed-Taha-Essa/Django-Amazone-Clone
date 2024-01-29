@@ -29,10 +29,12 @@ class Order(models.Model):
         self.delivery_time = self.order_time + week
         super(Order , self).save(*args, **kwargs )
     def __str__(self):
-        # li = []
-        # for item in self.order_detail.all() :
-        #     li.append(item.product.name)
-        # products = ' & '.join(i for i in li)  
+        '''
+        li = []
+        for item in self.order_detail.all() :
+            li.append(item.product.name)
+        products = ' & '.join(i for i in li) 
+        ''' 
         products = ' & '.join(i.product.name for i in self.order_detail.all())  
         return (products)
     
