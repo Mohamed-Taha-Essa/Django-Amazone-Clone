@@ -8,7 +8,7 @@ class OrderDetailSerializers(serializers.ModelSerializer):
         fields='__all__'
 
 class OrderSerializers(serializers.ModelSerializer):
-    order_detail = OrderDetailSerializers
+    order_detail = OrderDetailSerializers(many =True)
     class Meta:
         model = Order
         fields = '__all__'
@@ -20,7 +20,7 @@ class CartDetailSerializers(serializers.ModelSerializer):
         fields='__all__'
 
 class CartSerializers(serializers.ModelSerializer):
-    cart_detail = CartDetailSerializers
+    cart_detail = CartDetailSerializers(many = True)
     class Meta:
         model = Cart
         fields = '__all__'

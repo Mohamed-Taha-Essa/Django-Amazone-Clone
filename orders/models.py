@@ -29,7 +29,12 @@ class Order(models.Model):
         self.delivery_time = self.order_time + week
         super(Order , self).save(*args, **kwargs )
     def __str__(self):
-        return (self.order_detail.all()[0].product.name)
+        # li = []
+        # for item in self.order_detail.all() :
+        #     li.append(item.product.name)
+        # products = ' & '.join(i for i in li)  
+        products = ' & '.join(i.product.name for i in self.order_detail.all())  
+        return (products)
     
 class OrderDetail(models.Model):
     order = models.ForeignKey(Order, related_name='order_detail', on_delete=models.CASCADE)
