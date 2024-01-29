@@ -129,3 +129,18 @@ I want to show in api what i showed in views(orders list,detail,applycoupon)
     - (working with maing query) as return maing query and doing filter on it.
 
 - in order_detail_api --> no update no filter no delete no search as i bought the products and I was payment.
+- how can I get user??
+  - In django it's best to using request.user.
+  - In rest it's best to using url (from mobile app)
+  - ممكن المستخدم ما يكونشي ظاهر في الريكويست معنديش حد عامل login
+- I can send one varible or tow in url.
+- but in request.body I can send alot of data.
+
+
+
+
+
+
+
+ASK:
+  - ممكن المستخدم ما يكونشي ظاهر في الريكويست معنديش موقع معنديش حد عامل login
