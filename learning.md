@@ -137,7 +137,9 @@ I want to show in api what i showed in views(orders list,detail,applycoupon)
 - but in request.body I can send alot of data.
 
 
+## video 40 (Cart API):
 
+- add if condition in product_detail.html in form (add to cart) to check if the product.quantity>0 show it else (out of stock)
 
 
 
