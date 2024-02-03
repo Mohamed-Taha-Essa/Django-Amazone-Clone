@@ -112,6 +112,38 @@ class CreateOrderAPI(generics.GenericAPIView):
 
 
 
+class CartCreateUpdateDelete(generics.GenericAPIView):
 
+    def get(self , request ,*args, **kwargs):
+        #get or create cart
+        user = User.objects.get(username = self.kwargs['username'])
+        cart,created = Cart.objects.get_or_create(user=user ,status ='Inporgress')
+        #transfer to serializer as iam in api
+        data = CartSerializers(cart).data
+        # i return only cart as i implement cartdetail in cart serializer
+        return Response({'cart':data} ,status=status.HTTP_201_CREATED)
 
+    def post(self , request ,*args, **kwargs):
+        #update or add cart why in one ?
+        # as i am not know what i will do(add or update) untill when i get the cart
+        user = User.objects.get(username = self.kwargs['username'])
+        cart  = Cart.objects.get(user = user ,status = 'Inprogress')
+        product = Product.objects.get(id = user.date['product_id'])
+        quantity = int(request.data['quantity'])
+        cart_detail , created = CartDetail.objects.get_or_create(cart = cart , product = product)
+
+        cart_detail.quantity = quantity
+        cart_detail.total = round(product.price * cart_detail.quantity ,2)
+        cart_detail.save()
+        return Response({'message': 'cart was updated'} , status=status.HTTP_201_CREATED)
+
+    def delete(self , request ,*args, **kwargs):
+        #delete product from cart
+        #i want to know the id of product in cart_detail
+        user = User.objects.get(username = self.kwargs['username'])
+        # cart =Cart.objects.get(user = user , status= 'Inprogress')
+        product = CartDetail.objects.get(id = request.data['item_id'])
+        product.delete()
+
+        return Response({'message':'the product was delete successfully' },status=status.HTTP_200_OK)
 
