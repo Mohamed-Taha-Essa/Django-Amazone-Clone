@@ -142,6 +142,14 @@ I want to show in api what i showed in views(orders list,detail,applycoupon)
 - add if condition in product_detail.html in form (add to cart) to check if the product.quantity>0 show it else (out of stock)
 
 
+## video 41 (user part 1):
+- I am work on app Account(Address , Profile , ContactNumber)
+- create DB (profile for user)
+- create view for signup 
+- when user signup It will create new user automatically from django user and I will use signal to create( new profile)
+- then i will send email to activate .
+- after activate i will redirect to login page
+
 
 
 ASK:
