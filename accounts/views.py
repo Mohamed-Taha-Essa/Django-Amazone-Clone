@@ -1,5 +1,6 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth.models import User
+from django.core.mail import send_mail
 
 from .forms import SignupForm ,UserCreationForm
 from .models import Profile
@@ -15,18 +16,25 @@ def signup(request):
     if request.method =='POST':
         form = SignupForm(request.POST)
         if form.is_valid():
-            user_name = form.cleaned_data['user_name']
+            username = form.cleaned_data['username']
             email = form.cleaned_data['email']
-            code = form.cleaned_data['code']
             user = form.save(commit=True)
             # how i can access user befor save(i don't have user yet) i have user creation form
             user.is_active = False
-            form.save()            #--------> trigger signals why?? as i create user
-
-        #send email 
+            form.save()            #--------> trigger signals(create profile code) why?? as i create user
+            
+            profile =Profile.objects.get(user__username = username)
+            #send email 
+            send_mail(
+                "Activate Your email",
+                f"Welcome{username} \nUsing this{profile.code} to activate your Account",
+                "pythondevloper33@gmail.com",
+                [email],
+                fail_silently=False,
+            )
             
 
-            return redirect(f'accounts/{user_name}/activate')
+            return redirect(f'/accounts/{username}/activate')
     else:
         form = SignupForm()
     

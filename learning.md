@@ -147,8 +147,8 @@ I want to show in api what i showed in views(orders list,detail,applycoupon)
 - create DB (profile for user)
 - create view for signup 
 - when user signup It will create new user automatically from django user and I will use signal to create( new profile)
-- then i will send email to activate .
-- after activate i will redirect to login page
+- then i will send email to activate(using send_maile function to send email & add configuration in setting file) .
+- after activate i will redirect to login page.
 
 
 
