@@ -27,7 +27,7 @@ def signup(request):
             #send email 
             send_mail(
                 "Activate Your email",
-                f"Welcome{username} \nUsing this{profile.code} to activate your Account",
+                f"Welcome {username} \nUsing this {profile.code} to activate your Account",
                 "pythondevloper33@gmail.com",
                 [email],
                 fail_silently=False,

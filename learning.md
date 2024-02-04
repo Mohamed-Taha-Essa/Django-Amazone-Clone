@@ -151,6 +151,8 @@ I want to show in api what i showed in views(orders list,detail,applycoupon)
 - after activate i will redirect to login page.
 
 - in minute 48 talke aboute drage drop component of html online.
+- django by default login only by username .
+- so we will create file(backend.py) and create class to login by usernane or email this class inherite from (ModelBackend).
 
 ASK:
   - ممكن المستخدم ما يكونشي ظاهر في الريكويست معنديش موقع معنديش حد عامل login
