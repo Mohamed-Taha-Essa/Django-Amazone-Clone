@@ -153,6 +153,16 @@ I want to show in api what i showed in views(orders list,detail,applycoupon)
 - in minute 48 talke aboute drage drop component of html online.
 - django by default login only by username .
 - so we will create file(backend.py) and create class to login by usernane or email this class inherite from (ModelBackend).
+- add in settin file configuration for send gmail.
+
+
+## video 42 (user part2)
+- add authentication for django for urls.(accounts)
+- add frond end for authentication(mozila developer)
+- add all authentication files in regestiration inside template.
+- add password_change_form.html .
+- connect front end for website to front end from django using django bootstrap5 .
+- 
 
 ASK:
   - ممكن المستخدم ما يكونشي ظاهر في الريكويست معنديش موقع معنديش حد عامل login
