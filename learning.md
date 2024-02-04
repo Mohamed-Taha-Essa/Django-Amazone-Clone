@@ -150,7 +150,7 @@ I want to show in api what i showed in views(orders list,detail,applycoupon)
 - then i will send email to activate(using send_maile function to send email & add configuration in setting file) .
 - after activate i will redirect to login page.
 
-
+- in minute 48 talke aboute drage drop component of html online.
 
 ASK:
   - ممكن المستخدم ما يكونشي ظاهر في الريكويست معنديش موقع معنديش حد عامل login
