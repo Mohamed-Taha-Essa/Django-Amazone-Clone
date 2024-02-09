@@ -165,6 +165,7 @@ I want to show in api what i showed in views(orders list,detail,applycoupon)
   -  using django bootstrap5 .
   -  render form manual for every field (lose django validation ).
   -  inside djngo form(but in my way i don't have django form) customize on forms.py and give it css classes.
+-  in minute 43 talk abount permition of api and token.
 - 
 
 ASK:
