@@ -161,7 +161,10 @@ I want to show in api what i showed in views(orders list,detail,applycoupon)
 - add frond end for authentication(mozila developer)
 - add all authentication files in regestiration inside template.
 - add password_change_form.html .
-- connect front end for website to front end from django using django bootstrap5 .
+- connect django regisstration pages to temaplate  i have 3 ways:
+  -  using django bootstrap5 .
+  -  render form manual for every field (lose django validation ).
+  -  inside djngo form(but in my way i don't have django form) customize on forms.py and give it css classes.
 - 
 
 ASK:

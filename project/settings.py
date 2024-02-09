@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'django_filters',
     'drf_yasg',
     "debug_toolbar",
+    "django_bootstrap5",
 
     #apps
     'products',

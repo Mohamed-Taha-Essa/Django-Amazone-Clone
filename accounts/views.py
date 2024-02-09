@@ -12,6 +12,8 @@ def signup(request):
     send email with code
     redirect user to activate code
     '''
+    if request.user.is_authenticated:
+        return redirect('/')
 
     if request.method =='POST':
         form = SignupForm(request.POST)
