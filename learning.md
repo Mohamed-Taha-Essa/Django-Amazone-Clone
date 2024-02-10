@@ -166,7 +166,10 @@ I want to show in api what i showed in views(orders list,detail,applycoupon)
   -  render form manual for every field (lose django validation ).
   -  inside djngo form(but in my way i don't have django form) customize on forms.py and give it css classes.
 -  in minute 43 talk abount permition of api and token.
-- 
+- how using token authentication in api?
+  - add it in installed app.
+  - add in setting of rest.
+  - add in my api class (isauthenticated) 
 
 ASK:
   - ممكن المستخدم ما يكونشي ظاهر في الريكويست معنديش موقع معنديش حد عامل login
