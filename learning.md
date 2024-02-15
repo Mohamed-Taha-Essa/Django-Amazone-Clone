@@ -180,8 +180,14 @@ I want to show in api what i showed in views(orders list,detail,applycoupon)
 ## video 43 (Auth API and chart ):(no applied)
 - we added out of stock in product detail now we will add it in product list.
 - will add out of stock as obtion in adminpanel to filter products based on quntity in session of adminpanel.
-- jwt token best than django token. django.name of library(django simple jwt).
-- full authentication system.name of library(dj_rest_auth)(django all auth)
+- TOKEN:
+  - jwt token best than django token. ------------ name of library(django simple jwt).
+  - i can get only user from django token.
+  - but i can get alot of information from jwt token.
+  - jwt token is secure than django token & encryption is better.
+  - jwt token divide to 3 parts.
+  - (the last part in jwt token is to ensure that the token don't change)
+- full authentication system.------------------------name of library(dj_rest_auth(for API))(django all auth(without API))
 - what is access token and refresh token(minute 18).
 - using docs to add signup to authentication.
 - make all end point secure.
