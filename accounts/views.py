@@ -4,6 +4,8 @@ from django.core.mail import send_mail
 
 from .forms import SignupForm ,ActivateUserForm
 from .models import Profile
+
+from products.models import Product ,Brand,Review
 # Create your views here.
 
 def signup(request):
@@ -69,3 +71,14 @@ def user_activate(request,username):
     
     return render(request , 'accounts/activate.html',{'form':form})
 
+
+
+def dashboard(request):
+    product = Product.objects.all().count()
+    brand = Brand.objects.all().count()
+    review = Review.objects.all().count
+    return render(request , 'accounts/dashboard.html',{
+        'product':product,
+        'brand':brand,
+        'review':review,
+    })
