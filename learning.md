@@ -187,10 +187,10 @@ I want to show in api what i showed in views(orders list,detail,applycoupon)
   - jwt token is secure than django token & encryption is better.
   - jwt token divide to 3 parts.
   - (the last part in jwt token is to ensure that the token don't change)
-- full authentication system.------------------------name of library(dj_rest_auth(for API))(django all auth(without API))
+- full authentication system (login-->get token).------------------------name of library(dj_rest_auth(for API))(django all auth(without API))
 - what is access token and refresh token(minute 18).
-- using docs to add signup to authentication.
-- make all end point secure.
+- using docs to add signup to authentication (registration).
+- make all end point secure (add in setting ).
 - chartjs ( minute 27 )
 
 ASK:
