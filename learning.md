@@ -169,7 +169,23 @@ I want to show in api what i showed in views(orders list,detail,applycoupon)
 - how using token authentication in api?
   - add it in installed app.
   - add in setting of rest.
-  - add in my api class (isauthenticated) 
+  - add in my api class     permission_classes = [IsAuthenticated]
+
+- from minute 54 test endpoint on post man and make docs.(not applied)
+  
+  
+
+
+
+## video 43 (Auth API and chart ):(no applied)
+- we added out of stock in product detail now we will add it in product list.
+- will add out of stock as obtion in adminpanel to filter products based on quntity in session of adminpanel.
+- jwt token best than django token. django.name of library(django simple jwt).
+- full authentication system.name of library(dj_rest_auth)(django all auth)
+- what is access token and refresh token(minute 18).
+- using docs to add signup to authentication.
+- make all end point secure.
+- chartjs ( minute 27 )
 
 ASK:
   - ممكن المستخدم ما يكونشي ظاهر في الريكويست معنديش موقع معنديش حد عامل login

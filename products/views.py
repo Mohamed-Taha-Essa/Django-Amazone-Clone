@@ -113,6 +113,14 @@ class ProductList(ListView):
     model = Product
     paginate_by =50
 
+    #if you only want to show the product that have quantity > 0
+    ''' 
+        def get_queryset(self):
+        queryset= super().get_queryset()
+        queryset =queryset.filter(quantity__gt=0)
+        return queryset
+    '''
+
 
 class ProductDetail(DetailView):
     model = Product
