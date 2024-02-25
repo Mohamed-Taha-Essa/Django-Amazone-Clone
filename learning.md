@@ -191,7 +191,8 @@ I want to show in api what i showed in views(orders list,detail,applycoupon)
 - what is access token and refresh token(minute 18).
 - using docs to add signup to authentication (registration).
 - make all end point secure (add in setting ).
-- chartjs ( minute 27 )
+- chartjs ( minute 27 ) make dashboard
+----translation (notapplied)
 
 ASK:
   - ممكن المستخدم ما يكونشي ظاهر في الريكويست معنديش موقع معنديش حد عامل login
