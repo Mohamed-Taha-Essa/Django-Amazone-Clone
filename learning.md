@@ -191,8 +191,16 @@ I want to show in api what i showed in views(orders list,detail,applycoupon)
 - what is access token and refresh token(minute 18).
 - using docs to add signup to authentication (registration).
 - make all end point secure (add in setting ).
+<<<<<<< Updated upstream
 - chartjs ( minute 27 ) make dashboard
 ----translation (notapplied)
+=======
+- chartjs ( minute 27 )
+- Translation:
+- add path in url.py.
+- add LOCALEPATHS IN setting.py.
+- create file locale manually.
+>>>>>>> Stashed changes
 
 ASK:
   - ممكن المستخدم ما يكونشي ظاهر في الريكويست معنديش موقع معنديش حد عامل login

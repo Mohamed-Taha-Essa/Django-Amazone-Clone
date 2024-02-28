@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
         'accounts',
+    'django.contrib.sites',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -50,7 +51,6 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'rest_framework_simplejwt',
     'dj_rest_auth',
-    'django.contrib.sites',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -194,6 +194,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTHENTICATION_BACKENDS =[
     'accounts.backend.UsernameOrEmailLogin'
 ]
+LOCALE_PATHS = ['locale']
 
 # Redirect to home URL after login (Default redirects to /accounts/profile/)
 LOGIN_REDIRECT_URL = '/'
