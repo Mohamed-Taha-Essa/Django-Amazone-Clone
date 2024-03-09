@@ -6,16 +6,16 @@ FROM python:3.11.7-slim-bullseye
 ENV PYTHONUNBUFFERED = 1 
 
 #update kernal + install 
-RUN apt-get update && apt-get -y install gcc libp-dev
+RUN apt-get update && apt-get -y install gcc libpq-dev
 
 #folder for my project
 WORKDIR /app
 
 #copy requirements
-COPY requirements.txt /app/requirements.txt
+COPY requirments.txt /app/requirments.txt
 
 #install req
-RUN pip install -r /app/requirements.txt
+RUN pip install -r /app/requirments.txt
 
 # copy all project file
 COPY . /app/    

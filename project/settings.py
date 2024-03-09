@@ -136,6 +136,16 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.postgresql",
+#         "NAME": "db",
+#         "USER": "postgres",
+#         "PASSWORD": "postgres",
+#         "HOST": "amazone",
+#         "PORT": "5432",
+#     }
+# }
 
 
 # Password validation
@@ -190,6 +200,13 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #     "default": {
 #         "BACKEND": "django.core.cache.backends.redis.RedisCache",
 #         "LOCATION": "redis://127.0.0.1:6379",
+#     }
+# }
+
+# CACHES = {
+#     "default": {
+#         "BACKEND": "django.core.cache.backends.redis.RedisCache",
+#         "LOCATION": "redis://redis:6379/0",
 #     }
 # }
 
