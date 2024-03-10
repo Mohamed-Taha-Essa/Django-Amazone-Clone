@@ -1,3 +1,14 @@
+
+## TODO:
+- make constraing on review (one user can add one review) coding ??
+
+## video 30 :
+- related don't add to db as (calculated field)
+- design db 
+
+
+
+
 ## video 27 Django Template & API
 - using rest API in 3 cases :
   - mobile App
