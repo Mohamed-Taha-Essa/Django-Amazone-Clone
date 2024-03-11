@@ -3,9 +3,9 @@
 - make constraing on review (one user can add one review) coding ??
 
 ## video 30 :
-- related don't add to db as (calculated field)
-- design db 
-
+- related field (using AI ,using products in the same brand) don't add to db as (calculated field)
+- design db (model)
+- using slug , tabular inline ,githun desktop 
 
 
 
@@ -14,7 +14,7 @@
   - mobile App
   - JS framework (react ,angular ,vue)
   - microservice archetecture.
-- Monolithic architecture -->simple or general of using building website (usint one DB)
+- Monolithic architecture -->simple or general of using building website (using one DB)
 - Micrservice architecture----> complex (using on big website and very cost) (divide website to multible service every service using ther DB)
 - SAAS & Multitennant
 - api file instead of views file (for arrange code)
