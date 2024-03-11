@@ -95,7 +95,7 @@ msgstr "الرسومات"
 
 #: .\templates\base.html:208
 msgid "call us"
-msgstr ""
+msgstr "اتصل بنا"
 
 #: .\templates\base.html:215
 msgid "email us"
