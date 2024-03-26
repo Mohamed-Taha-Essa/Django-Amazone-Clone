@@ -24,7 +24,7 @@
 
 - add logic from template make loading on browser and make website slow.
 - add logic from view or model make your website faster .
-- best practice add logic in view as you can use it in every place in your project until(API)
+- best practice add logic in model as you can use it in every place in your project until(API)
 - when work with pagination in CBV in template don't make space in url.
 - fat model thin view .
 
@@ -51,11 +51,15 @@
 - add method in serialzers to calculate avg_rate and review count.
 - the name of method must start with get_lsdj() , and using the name lsdj as acolumn in db .
 
-## video 35
+## video 35 Queryset api :
 
 - django queryset api .
+- query that apply on db .
+- interview ques :
+  - difference between select_related  , prefetch_related (make join of 2 table in one for relation  one to one and foreign key ----many to many)
+  - what is aggregation function (count min max avg sum)
 - add simple class meta in model .
-  
+
 ## video 36
 
 - add instance method in model .
@@ -197,5 +201,5 @@ I want to show in api what i showed in views(orders list,detail,applycoupon)
 
 ## video 45 (docker part1 ):
 - when using postgres with django u must install (psycopg2-binary)
-ASK:
+  ASK:
   - ممكن المستخدم ما يكونشي ظاهر في الريكويست معنديش موقع معنديش حد عامل login
