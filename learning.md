@@ -70,6 +70,8 @@
   - difference between select_related  , prefetch_related (make join of 2 table in one for relation  one to one and foreign key ----many to many)
   - what is aggregation function (count min max avg sum)
 - add simple class meta in model .
+- annotate don't come with get it come with all or filter come with kteer .
+- add meta class in model .
 
 ## video 36
 
