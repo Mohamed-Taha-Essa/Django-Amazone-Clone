@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-29 00:55+0200\n"
+"POT-Creation-Date: 2024-03-12 00:05+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -70,3 +70,41 @@ msgstr "المحتوى"
 #: .\products\models.py:77
 msgid "rate "
 msgstr "معدل"
+
+#: .\templates\base.html:185
+msgid "Home"
+msgstr "الرئيسيه"
+
+#: .\templates\base.html:188
+msgid "Shop"
+msgstr "المتجر"
+
+#: .\templates\base.html:191
+#, fuzzy
+#| msgid "brand"
+msgid "Brands"
+msgstr "العلامة التجارية"
+
+#: .\templates\base.html:195
+msgid "Orders"
+msgstr "الطلبات"
+
+#: .\templates\base.html:199
+msgid "dashboard"
+msgstr "الرسومات"
+
+#: .\templates\base.html:208
+msgid "call us"
+msgstr "اتصل بنا"
+
+#: .\templates\base.html:215
+msgid "email us"
+msgstr "راسلنا"
+
+#: .\templates\base.html:542
+msgid "Call us"
+msgstr "اتصل بنا"
+
+#: .\templates\base.html:549
+msgid "Email us"
+msgstr "ارسل لنا"
