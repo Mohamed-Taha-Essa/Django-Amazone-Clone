@@ -1,0 +1,63 @@
+<h3 class="frame-title">Reviews ({{reviews |length}})</h3>
+<ul class="review-list">
+    {% for review in reviews  %}
+        <li class="review-item">
+            <div class="review-media">
+                <a class="review-avatar" href="#">
+                    <img src="images/avatar/01.jpg" alt="review">
+                </a>
+                <h5 class="review-meta">
+                    <a href="#">{{review.user}} </a>
+                    <span>June 02, 2020</span>
+                    <span>{{review.created_at}} </span>
+                </h5>
+            </div>
+            <ul class="review-rating">
+                <li class="icofont-ui-{% if review.rate > 0 %}rating{% else %}rate-blank{% endif %}"></li>
+                <li class="icofont-ui-{% if review.rate > 1 %}rating{% else %}rate-blank{% endif %}"></li>
+                <li class="icofont-ui-{% if review.rate > 2 %}rating{% else %}rate-blank{% endif %}"></li>
+                <li class="icofont-ui-{% if review.rate > 3 %}rating{% else %}rate-blank{% endif %}"></li>
+                <li class="icofont-ui-{% if review.rate > 4 %}rating{% else %}rate-blank{% endif %}"></li>
+            </ul>
+            <p class="review-desc">{{review.content}}!</p>
+            <form class="review-reply">
+                <input type="text" placeholder="reply your thoughts">
+                <button><i class="icofont-reply"></i>reply</button>
+            </form>
+            {% comment %} <ul class="review-reply-list">
+                <li class="review-reply-item">
+                    <div class="review-media">
+                        <a class="review-avatar" href="#">
+                            <img src="images/avatar/02.jpg" alt="review">
+                        </a>
+                        <h5 class="review-meta">
+                            <a href="#">labonno khan</a>
+                            <span><b>author -</b> June 02, 2020</span>
+                        </h5>
+                    </div>
+                    <p class="review-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus hic amet qui velit, molestiae suscipit perferendis, autem doloremque blanditiis dolores nulla excepturi ea nobis!</p>
+                    <form class="review-reply">
+                        <input type="text" placeholder="reply your thoughts">
+                        <button><i class="icofont-reply"></i>reply</button>
+                    </form>
+                </li>
+                <li class="review-reply-item">
+                    <div class="review-media">
+                        <a class="review-avatar" href="#">
+                            <img src="images/avatar/03.jpg" alt="review">
+                        </a>
+                        <h5 class="review-meta">
+                            <a href="#">tahmina bonny</a>
+                            <span>June 02, 2020</span>
+                        </h5>
+                    </div>
+                    <p class="review-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus hic amet qui velit, molestiae suscipit perferendis, autem doloremque blanditiis dolores nulla excepturi ea nobis!</p>
+                    <form class="review-reply">
+                        <input type="text" placeholder="reply your thoughts">
+                        <button><i class="icofont-reply"></i>reply</button>
+                    </form>
+                </li>
+            </ul> {% endcomment %}
+        </li>
+    {% endfor %}
+</ul>

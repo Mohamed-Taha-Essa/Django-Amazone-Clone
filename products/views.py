@@ -5,6 +5,10 @@ from django.db.models import Q,F,Value,Max
 from django.db.models.aggregates import Count ,Sum,Min,Avg
 from django.views.decorators.cache import cache_page
 
+
+from django.http import JsonResponse
+from django.template.loader import render_to_string
+
 # Create your views here.
 
 @cache_page(60 * 1)
@@ -194,5 +198,7 @@ def add_review(request,slug):
         rate =rate ,
         content =review
     )
+    reviews= Review.objects.filter(product = product)
+    page = render_to_string('includes/reviews.html',{'reviews':reviews})
+    return JsonResponse({'result':page})
 
-    return redirect(f'/products/{slug}')    

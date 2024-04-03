@@ -93,7 +93,7 @@
                                 <i class=" icofont-star {% if object.avg_rate > 2 %}  active  {% endif %}"></i>
                                 <i class=" icofont-star {% if object.avg_rate > 3 %}  active  {% endif %}"></i>
                                 <i class="icofont-star {% if object.avg_rate > 4 %}  active  {% endif %}"></i>
-                                <a href="#">({{object.avg_rate}} reviews)</a>
+                                <a href="#">({{reviews |length}} reviews)</a>
                             </div>
                             <h3 class="details-price">
                                 {% comment %} <del>$38.00</del> {% endcomment %}
@@ -200,74 +200,14 @@
                                 </tbody>
                             </table>
                         </div> {% endcomment %}
-                        <div class="product-details-frame">
-                            <h3 class="frame-title">Reviews ({{reviews |length}})</h3>
-                            <ul class="review-list">
-                                {% for review in reviews  %}
-                                    <li class="review-item">
-                                        <div class="review-media">
-                                            <a class="review-avatar" href="#">
-                                                <img src="images/avatar/01.jpg" alt="review">
-                                            </a>
-                                            <h5 class="review-meta">
-                                                <a href="#">{{review.user}} </a>
-                                                <span>June 02, 2020</span>
-                                                <span>{{review.created_at}} </span>
-                                            </h5>
-                                        </div>
-                                        <ul class="review-rating">
-                                            <li class="icofont-ui-{% if review.rate > 0 %}rating{% else %}rate-blank{% endif %}"></li>
-                                            <li class="icofont-ui-{% if review.rate > 1 %}rating{% else %}rate-blank{% endif %}"></li>
-                                            <li class="icofont-ui-{% if review.rate > 2 %}rating{% else %}rate-blank{% endif %}"></li>
-                                            <li class="icofont-ui-{% if review.rate > 3 %}rating{% else %}rate-blank{% endif %}"></li>
-                                            <li class="icofont-ui-{% if review.rate > 4 %}rating{% else %}rate-blank{% endif %}"></li>
-                                        </ul>
-                                        <p class="review-desc">{{review.content}}!</p>
-                                        <form class="review-reply">
-                                            <input type="text" placeholder="reply your thoughts">
-                                            <button><i class="icofont-reply"></i>reply</button>
-                                        </form>
-                                        {% comment %} <ul class="review-reply-list">
-                                            <li class="review-reply-item">
-                                                <div class="review-media">
-                                                    <a class="review-avatar" href="#">
-                                                        <img src="images/avatar/02.jpg" alt="review">
-                                                    </a>
-                                                    <h5 class="review-meta">
-                                                        <a href="#">labonno khan</a>
-                                                        <span><b>author -</b> June 02, 2020</span>
-                                                    </h5>
-                                                </div>
-                                                <p class="review-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus hic amet qui velit, molestiae suscipit perferendis, autem doloremque blanditiis dolores nulla excepturi ea nobis!</p>
-                                                <form class="review-reply">
-                                                    <input type="text" placeholder="reply your thoughts">
-                                                    <button><i class="icofont-reply"></i>reply</button>
-                                                </form>
-                                            </li>
-                                            <li class="review-reply-item">
-                                                <div class="review-media">
-                                                    <a class="review-avatar" href="#">
-                                                        <img src="images/avatar/03.jpg" alt="review">
-                                                    </a>
-                                                    <h5 class="review-meta">
-                                                        <a href="#">tahmina bonny</a>
-                                                        <span>June 02, 2020</span>
-                                                    </h5>
-                                                </div>
-                                                <p class="review-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus hic amet qui velit, molestiae suscipit perferendis, autem doloremque blanditiis dolores nulla excepturi ea nobis!</p>
-                                                <form class="review-reply">
-                                                    <input type="text" placeholder="reply your thoughts">
-                                                    <button><i class="icofont-reply"></i>reply</button>
-                                                </form>
-                                            </li>
-                                        </ul> {% endcomment %}
-                                    </li>
-                                {% endfor %}
-                            </ul>
+                        <div id='all-reviews' class="product-details-frame">
+                           {% include "includes/reviews.html" %}
+
                         </div>
                         <div class="product-details-frame">
                             <h3 class="frame-title">add your review</h3>
-                            <form class="review-form" method='post' action='/products/{{object.slug}}/add-review'>
+                           
+                            <form id ='form-review' class="review-form" method='post' action='/products/{{object.slug}}/add-review'>
                                 {% csrf_token %}
                                 <div class="row">
                                     <div class="col-lg-12">
@@ -294,6 +234,7 @@
                                     </div>
                                 </div>
                             </form>
+
                         </div>
                     </div>
                 </div>
@@ -385,8 +326,36 @@
         <!--=====================================
                     NEWSLETTER PART START
         =======================================-->
-    
-    {% endblock body %}
+
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>    
+        <script>
+
+            $(document).ready(function(){//execute codo on loading
+
+                $(document).on('submit' ,'#form-review',function(event){
+                    //no refresh
+                    event.preventDefault()
+
+                    //ajax
+                    $.ajax({
+                        type: $(this).attr('method'),
+                        url: $(this).attr('action'),
+                        data: $(this).serialize(),
+                        dataType:'json',
+                        success: function(response){
+                            $('#all-reviews').html(response['result'])
+                            $('#form-review').trigger('reset')
+                        },
+                        error: function(){
+
+                        },
+                    })
+                })
+            })
+        </script>
+   
+   
+        {% endblock body %}
 
 
 
