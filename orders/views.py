@@ -77,5 +77,10 @@ def add_to_cart(request):
 
     cart = Cart.objects.get(user = request.user ,status = 'Inprogress')
     cart_detail  = CartDetail.objects.filter(cart = cart)
+
+    total = cart.cart_total
+    count = len(cart_detail)
     page = render_to_string('cart_include.html',{'cart_detail_data':cart_detail ,'cart_data':cart})
-    return JsonResponse({'result':page})
+    return JsonResponse({'result':page,
+                         'total':total,
+                         'count':count})

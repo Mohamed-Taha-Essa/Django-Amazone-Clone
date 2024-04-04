@@ -365,6 +365,8 @@
                         dataType:'json',
                         success: function(response){
                             $('#cart-side').html(response['result'])
+                            $('#totalPrice').text(response['total'])
+                            $('#cartCount').text(response['count'])
                         },
                         error: function(){
 
