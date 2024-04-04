@@ -216,3 +216,7 @@ I want to show in api what i showed in views(orders list,detail,applycoupon)
 - when using postgres with django u must install (psycopg2-binary)
   ASK:
   - ممكن المستخدم ما يكونشي ظاهر في الريكويست معنديش موقع معنديش حد عامل login
+
+
+
+## study jquery dom

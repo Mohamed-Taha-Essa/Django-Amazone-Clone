@@ -120,7 +120,7 @@
                             <div class="details-add-group">
                                 
                                 {% if object.quantity > 0 %}
-                                    <form action="/orders/add-to-cart" method="post" class="row">
+                                    <form id ='add-to-cart' action="/orders/add-to-cart" method="post" class="row">
                                         {% csrf_token %}
                                         <div class="col-lg-6">
                                             <input class="action-input" title="Quantity Number" type="number" name="quantity" value="1">
@@ -331,7 +331,7 @@
         <script>
 
             $(document).ready(function(){//execute codo on loading
-
+                //update reviews
                 $(document).on('submit' ,'#form-review',function(event){
                     //no refresh
                     event.preventDefault()
@@ -345,6 +345,26 @@
                         success: function(response){
                             $('#all-reviews').html(response['result'])
                             $('#form-review').trigger('reset')
+                        },
+                        error: function(){
+
+                        },
+                    })
+                })
+
+                //update cart
+                $(document).on('submit' ,'#add-to-cart',function(event){
+                    //no refresh
+                    event.preventDefault()
+
+                    //ajax
+                    $.ajax({
+                        type: $(this).attr('method'),
+                        url: $(this).attr('action'),
+                        data: $(this).serialize(),
+                        dataType:'json',
+                        success: function(response){
+                            $('#cart-side').html(response['result'])
                         },
                         error: function(){
 
