@@ -87,7 +87,7 @@ class CreateOrderAPI(generics.GenericAPIView):
 
         for item in cart_detail :
             product = Product.objects.get(id = item.product.id)
-            item.objects.create(
+            OrderDetail.objects.create(
                order = new_order ,
                product = item.product ,
                price = product.price ,

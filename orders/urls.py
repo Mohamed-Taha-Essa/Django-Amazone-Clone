@@ -1,11 +1,15 @@
 from django.urls import path
-from .views import order_list,checkout,add_to_cart
+from .views import order_list,checkout,add_to_cart,payment_failed,payment_proces,payment_success
 from .api  import OrderListAPI,OrderDetailAPI,ApplyCouponAPI,CreateOrderAPI,CartCreateUpdateDelete
 
 urlpatterns = [
     path("", order_list),
     path("checkout/", checkout),
     path("add-to-cart", add_to_cart),
+
+    path("checkout/payment-process", payment_proces),
+    path("checkout/payment/success", payment_success),
+    path("checkout/payment/failed", payment_failed),
 
 
 
