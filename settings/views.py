@@ -13,7 +13,7 @@ def home(request):
     brands = Brand.objects.all().annotate(product_count =Count('product_brand'))[:10]
     reviews = Review.objects.all()[:10]
 
-    print("==============",len(new_product))
+   
     return render(request ,'settings/home.html',{
         'new_product':new_product,
         'sale_product':sale_product,

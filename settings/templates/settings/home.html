@@ -15,11 +15,11 @@
                                 <h1>free home delivery within 24 hours now.</h1>
                                 <p>Lorem ipsum dolor consectetur adipisicing elit modi consequatur eaque expedita porro necessitatibus eveniet voluptatum quis pariatur Laboriosam molestiae architecto excepturi</p>
                                 <div class="banner-btn">
-                                    <a class="btn btn-inline" href="shop-4column.html">
+                                    <a class="btn btn-inline" href="/products/">
                                         <i class="fas fa-shopping-basket"></i>
                                         <span>shop now</span>
                                     </a>
-                                    <a class="btn btn-outline" href="offer.html">
+                                    <a class="btn btn-outline" href="/products/">
                                         <i class="icofont-sale-discount"></i>
                                         <span>get offer</span>
                                     </a>
@@ -47,11 +47,11 @@
                                 <h1>free home delivery within 24 hours now.</h1>
                                 <p>Lorem ipsum dolor consectetur adipisicing elit modi consequatur eaque expedita porro necessitatibus eveniet voluptatum quis pariatur Laboriosam molestiae architecto excepturi</p>
                                 <div class="banner-btn">
-                                    <a class="btn btn-inline" href="shop-4column.html">
+                                    <a class="btn btn-inline" href="/products/">
                                         <i class="fas fa-shopping-basket"></i>
                                         <span>shop now</span>
                                     </a>
-                                    <a class="btn btn-outline" href="offer.html">
+                                    <a class="btn btn-outline" href="/products/">
                                         <i class="icofont-sale-discount"></i>
                                         <span>get offer</span>
                                     </a>
@@ -137,15 +137,16 @@
                                         
                                         <span>${{item.price}}</span>
                                     </h6>
-                                    <button class="product-add" title="Add to Cart">
+                                    <a href="/products/{{item.slug}}" class="taha" title="Add to Cart"> 
+                                        
                                         <i class="fas fa-shopping-basket"></i>
-                                        <span>add</span>
-                                    </button>
-                                    <div class="product-action">
-                                        <button class="action-minus" title="Quantity Minus"><i class="icofont-minus"></i></button>
+                                     <span>add</span>
+                                        
+                                    {% comment %} </button> {% endcomment %}
+                                </a>
+                                    {% comment %} <div class="product-action">
                                         <input class="action-input" title="Quantity Number" type="text" name="quantity" value="1">
-                                        <button class="action-plus" title="Quantity Plus"><i class="icofont-plus"></i></button>
-                                    </div>
+                                    </div> {% endcomment %}
                                 </div>
                             </div>
                         </div>
@@ -232,15 +233,10 @@
                                         <span>${{item.price}}</span>
                                     </h6>
                                     <p class="feature-desc">{{item.subtitle|truncatewords:20}} </p>
-                                    <button class="product-add" title="Add to Cart">
+                                    <a href="/products/{{ item.slug }}" class="taha" title="Add to Cart">
                                         <i class="fas fa-shopping-basket"></i>
                                         <span>add</span>
-                                    </button>
-                                    <div class="product-action">
-                                        <button class="action-minus" title="Quantity Minus"><i class="icofont-minus"></i></button>
-                                        <input class="action-input" title="Quantity Number" type="text" name="quantity" value="1">
-                                        <button class="action-plus" title="Quantity Plus"><i class="icofont-plus"></i></button>
-                                    </div>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -279,7 +275,7 @@
                                 <span class="countdown-time"><span>00</span><small>minutes</small></span>
                                 <span class="countdown-time"><span>00</span><small>seconds</small></span>
                             </div>
-                            <a href="shop-4column.html" class="btn btn-inline">
+                            <a href="/products/" class="btn btn-inline">
                                 <i class="fas fa-shopping-basket"></i>
                                 <span>shop now</span>
                             </a>
@@ -349,15 +345,11 @@
                                                 
                                                 <span>${{item.price}}</span>
                                             </h6>
-                                            <button class="product-add" title="Add to Cart">
+                                            <a href="/products/{{ item.slug }}" class="taha" title="Add to Cart">
                                                 <i class="fas fa-shopping-basket"></i>
                                                 <span>add</span>
-                                            </button>
-                                            <div class="product-action">
-                                                <button class="action-minus" title="Quantity Minus"><i class="icofont-minus"></i></button>
-                                                <input class="action-input" title="Quantity Number" type="text" name="quantity" value="1">
-                                                <button class="action-plus" title="Quantity Plus"><i class="icofont-plus"></i></button>
-                                            </div>
+                                            </a>
+                                           
                                         </div>
                                     </div>
                                 </li>
@@ -385,22 +377,7 @@
         <!--=====================================
                     PROMOTION PART START
         =======================================-->
-        <div class="section promo-part">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-12 col-md-6 col-lg-6 px-xl-3">
-                        <div class="promo-img">
-                            <a href=""><img src="{{ new_product.5.image.url }}" alt="promo"></a>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-6 col-lg-6 px-xl-3">
-                        <div class="promo-img">
-                            <a href=""><img src="{{ new_product.0.image.url }}" alt="promo"></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+       
         <!--=====================================
                     PROMOTION PART END
         =======================================-->
@@ -478,7 +455,7 @@
                                         <del>$34</del>
                                         <span>$28<small>/piece</small></span>
                                     </h6>
-                                    <button class="product-add" title="Add to Cart">
+                                    <button class="taha" title="Add to Cart">
                                         <i class="fas fa-shopping-basket"></i>
                                         <span>add</span>
                                     </button>
@@ -524,7 +501,7 @@
                                         <del>$34</del>
                                         <span>$28<small>/piece</small></span>
                                     </h6>
-                                    <button class="product-add" title="Add to Cart">
+                                    <button class="taha" title="Add to Cart">
                                         <i class="fas fa-shopping-basket"></i>
                                         <span>add</span>
                                     </button>
@@ -570,7 +547,7 @@
                                         <del>$34</del>
                                         <span>$28<small>/piece</small></span>
                                     </h6>
-                                    <button class="product-add" title="Add to Cart">
+                                    <button class="taha" title="Add to Cart">
                                         <i class="fas fa-shopping-basket"></i>
                                         <span>add</span>
                                     </button>
@@ -1839,7 +1816,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="section-btn-25">
-                            <a href="shop-4column.html" class="btn btn-outline">
+                            <a href="/products/" class="btn btn-outline">
                                 <i class="fas fa-eye"></i>
                                 <span>show more</span>
                             </a>

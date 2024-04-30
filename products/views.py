@@ -124,7 +124,9 @@ class ProductList(ListView):
         queryset =queryset.filter(quantity__gt=0)
         return queryset
     '''
-
+    def get_queryset(self):
+            # Retrieve and return products sorted by quantity (biggest quantity first)
+            return Product.objects.order_by('-quantity')
 
 class ProductDetail(DetailView):
     model = Product

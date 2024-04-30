@@ -7,7 +7,7 @@ def get_setting(request):
     cache.get_or_set("setting_data", setting_data, 100)
 
 
-    #check data in cache
+    # #check data in cache
     # try:
     #     setting_data = cache.get('settin_data')
     #     print('new data')

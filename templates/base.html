@@ -41,6 +41,8 @@
             <link rel="stylesheet" href="{% static 'en/vendor/niceselect/nice-select.min.css' %}">
             <link rel="stylesheet" href="{% static 'en/vendor/bootstrap/bootstrap.min.css' %}">
             <link rel="stylesheet" href="{% static 'en/css/main.css' %}">
+            <link rel="stylesheet" href="{% static 'en/css/add-to-cart.css' %}">
+
          {% else %}
             <link rel="icon" href="ar/images/favicon.png">
             <link rel="stylesheet" href="{% static 'ar/fonts/flaticon/flaticon.css' %}">
@@ -51,6 +53,8 @@
             <link rel="stylesheet" href="{% static 'ar/vendor/niceselect/nice-select.min.css' %}">
             <link rel="stylesheet" href="{% static 'ar/vendor/bootstrap/bootstrap.min.css' %}">
             <link rel="stylesheet" href="{% static 'ar/css/main.css' %}">
+            <link rel="stylesheet" href="{% static 'en/css/add-to-cart.css' %}">
+
             
             {% endif %}
 
@@ -136,12 +140,7 @@
         <header class="header-part">
             <div class="container">
                 <div class="header-content">
-                    <div class="header-media-group">
-                        <button class="header-user"><img src="images/user.png" alt="user"></button>
-                        <a href="index.html"><img src="images/logo.png" alt="logo"></a>
-                        <button class="header-src"><i class="fas fa-search"></i></button>
-                    </div>
-
+                  
                     <a href="index.html" class="header-logo">
                         <img src="{{setting_data.logo.url}}" alt="logo">
                     </a>
@@ -149,8 +148,9 @@
                         {% if user.is_authenticated %}
                             <img src="images/user.png" alt="user">
                         {% else %}
-                            <a href="/accounts/login">LogIn</a>
-                            <a href="/accounts/signup">SignUp</a>
+                       
+                            <a class="btn btn-primary  btn-block btn-sm"   href="/accounts/login"  >LogIn</a>
+                            <a  class="btn btn-success  btn-block btn-sm" href="/accounts/signup"  > SignUp</a>
                         {% endif %}
                     </a>
 

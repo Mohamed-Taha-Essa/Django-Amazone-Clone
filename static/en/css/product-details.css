@@ -5,6 +5,8 @@
   position: relative;
 }
 
+
+
 .details-label-group {
   position: absolute;
   top: 20px;
@@ -724,3 +726,4 @@
     margin-left: 30px;
   }
 }
+

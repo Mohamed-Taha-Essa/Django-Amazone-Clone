@@ -396,15 +396,11 @@
                                                 {% comment %} <del>$34</del> {% endcomment %}
                                                 <span>${{ object.price }}</span>
                                             </h6>
-                                            <button class="product-add" title="Add to Cart">
+                                            <a href="/products/{{ object.slug }}" class="taha" title="Add to Cart">
                                                 <i class="fas fa-shopping-basket"></i>
                                                 <span>add</span>
-                                            </button>
-                                            <div class="product-action">
-                                                <button class="action-minus" title="Quantity Minus"><i class="icofont-minus"></i></button>
-                                                <input class="action-input" title="Quantity Number" type="text" name="quantity" value="1">
-                                                <button class="action-plus" title="Quantity Plus"><i class="icofont-plus"></i></button>
-                                            </div>
+                                            </a>
+                                            
                                         </div>
                                     </div>
                                 </div>
