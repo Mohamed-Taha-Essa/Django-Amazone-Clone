@@ -185,7 +185,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-STATIC_ROOT =   BASE_DIR / "staticfiles",
+STATIC_ROOT =   BASE_DIR / "static",
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
@@ -236,9 +236,4 @@ STRIPE_API_KEY_PUBLISHABLE = 'pk_test_51P880oKmILasMTKHkHPUHZMJvbOTlDhwYf6Lecdme
 STRIPE_API_KEY_SECRETE = 'sk_test_51P880oKmILasMTKHBHeKSEbEqBT1Fy4ZT6oDFHTGLZ2aJ71genNUt7D9LkKVQJ13N6gaBCQdnIOcfRDTGF1Bvz0i002PpGTL4z'
 
 
-STORAGES = {
-    # ...
-    "staticfiles": {
-        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
-    },
-}
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
