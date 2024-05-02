@@ -51,6 +51,7 @@ class Product(models.Model):
         return avg_rate
     
 
+
 class ProductImages(models.Model):
     product =models.ForeignKey(Product,verbose_name=_('product'),related_name='product_image',on_delete=models.CASCADE)
     image =models.ImageField(_('image'),upload_to='productimage')

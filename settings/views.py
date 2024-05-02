@@ -9,7 +9,8 @@ def home(request):
     sale_product = Product.objects.filter(flag ='Sale')[:10]
    
     feature_product = Product.objects.filter(flag ='Feature')[:6]
-    # i want to know the number of product in every brand
+
+     # i want to know the number of product in every brand
     brands = Brand.objects.all().annotate(product_count =Count('product_brand'))[:10]
     reviews = Review.objects.all()[:10]
 
@@ -20,5 +21,4 @@ def home(request):
         'feature_product':feature_product,
         'brands':brands,
         'reviews':reviews,
-        
     })
