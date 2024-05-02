@@ -896,6 +896,45 @@
             <!--=====================================
                     JS LINK PART END
         =======================================-->
+        <script>
+            
+            document.addEventListener('DOMContentLoaded', function () {
+                const tabLinks = document.querySelectorAll('.tab-link');
+            
+                tabLinks.forEach(function (link) {
+                    link.addEventListener('click', function (e) {
+                        e.preventDefault();
+            
+                        const targetTab = this.getAttribute('href');
+                        const tabPane = document.querySelector(targetTab);
+            
+                        if (tabPane) {
+                            const allTabPanes = document.querySelectorAll('.tab-pane');
+                            allTabPanes.forEach(function (pane) {
+                                pane.classList.remove('show', 'active');
+                                pane.style.display = 'none'; // Hide all tab panes initially
+                            });
+            
+                            tabPane.classList.add('show', 'active');
+                            tabPane.style.display = 'block'; // Show the selected tab pane
+                        }
+            
+                        // Optional: Update active class on tab links for visual indication
+                        tabLinks.forEach(function (tab) {
+                            tab.classList.remove('active');
+                        });
+                        this.classList.add('active');
+            
+                        // Additional logic to maintain container size if needed
+                        const tabContentContainer = document.querySelector('.tab-content-container');
+                        if (tabContentContainer) {
+                            tabContentContainer.style.height = tabContentContainer.clientHeight + 'px';
+                            tabContentContainer.style.width = tabContentContainer.clientWidth + 'px';
+                        }
+                    });
+                });
+            });
+        </script>
     </body>
 </html>
 
