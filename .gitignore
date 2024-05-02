@@ -32,9 +32,7 @@ MANIFEST
 *.manifest
 db.sqlite3
 *.spec
-media/
-media/*.jpg
-media/*.png
+
 
 
 migrations/
