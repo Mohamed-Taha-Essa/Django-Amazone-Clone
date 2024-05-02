@@ -50,7 +50,14 @@ class Product(models.Model):
             avg_rate =0 
         return avg_rate
     
+class OrderProduct(models.Model):
+    product = models.ForeignKey(Product , related_name= 'order_product' ,on_delete=models.CASCADE)
+    quantity = models.IntegerField()
 
+
+    def __str__(self):
+        return f"{self.quantity} x {self.product.name}"
+    
 
 class ProductImages(models.Model):
     product =models.ForeignKey(Product,verbose_name=_('product'),related_name='product_image',on_delete=models.CASCADE)
