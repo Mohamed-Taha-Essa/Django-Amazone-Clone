@@ -164,8 +164,8 @@
                         </a>
                         <button class="header-widget header-cart" title="Cartlist">
                             <i class="fas fa-shopping-basket"></i>
-                            <sup id='cartCount'>{{cart_detail_data|length}}</sup>
-                            <span>total price<small id ='totalPrice'>${{cart_data.cart_total}}</small></span>
+                            {% comment %} <sup id='cartCount'>{{cart_detail_data|length}}</sup> {% endcomment %}
+                            {% comment %} <span>total price<small id ='totalPrice'>${{cart_data.cart_total}}</small></span> {% endcomment %}
                         </button>
                     </div>
                 </div>
@@ -186,21 +186,21 @@
                         <div class="navbar-content">
                             <ul class="navbar-list">
                                 <li class="navbar-item ">
-                                    <a class="navbar-link" href="/">{% translate "Home" %}</a>
+                                    {% comment %} <a class="navbar-link" href="/">{% translate "Home" %}</a> {% endcomment %}
                                 </li>
                                 <li class="navbar-item ">
-                                    <a class="navbar-link " href="/products">{% translate "Shop" %}</a>
+                                    {% comment %} <a class="navbar-link " href="/products">{% translate "Shop" %}</a> {% endcomment %}
                                 </li>
                                 <li class="navbar-item ">
-                                    <a class="navbar-link " href="/products/brands">{% translate "Brands" %}</a>
+                                    {% comment %} <a class="navbar-link " href="/products/brands">{% translate "Brands" %}</a> {% endcomment %}
                                     
                                 </li>
                                 <li class="navbar-item dropdown">
-                                    <a class="navbar-link " href="/orders">{% translate "Orders" %}</a>
+                                    {% comment %} <a class="navbar-link " href="/orders">{% translate "Orders" %}</a> {% endcomment %}
                                     
                                 </li>
                                 <li class="navbar-item ">
-                                    <a class="navbar-link " href="/accounts/dashboard">{% translate "dashboard" %}</a>
+                                    {% comment %} <a class="navbar-link " href="/accounts/dashboard">{% translate "dashboard" %}</a> {% endcomment %}
                                    
                                 </li>
                               
@@ -217,7 +217,7 @@
                                     <i class="icofont-ui-email"></i>
                                     <p>
                                         <small>{% translate "email us" %}</small>
-                                        <span>{{setting_data.email_us}}</span>
+                                        {% comment %} <span>{{setting_data.email_us}}</span> {% endcomment %}
                                     </p>
                                 </div>
                             </div>
@@ -390,7 +390,7 @@
                   CART SIDEBAR PART START
         =======================================-->
         <aside id='cart-side' class="cart-sidebar">
-            {% include "cart_include.html" %}
+            {% comment %} {% include "cart_include.html" %} {% endcomment %}
         </aside>
         <!--=====================================
                     CART SIDEBAR PART END
@@ -510,14 +510,14 @@
                         <i class="icofont-ui-touch-phone"></i>
                         <p>
                             <small>{% translate "Call us" %}</small>
-                            <span>{{setting_data.phones}}</span>
+                            {% comment %} <span>{{setting_data.phones}}</span> {% endcomment %}
                         </p>
                     </div>
                     <div class="nav-info">
                         <i class="icofont-ui-email"></i>
                         <p>
                             <small>{% translate "Email us" %}</small>
-                            <span>{{setting_data.email_us}}</span>
+                            {% comment %} <span>{{setting_data.email_us}}</span> {% endcomment %}
                         </p>
                     </div>
                 </div>
@@ -898,7 +898,7 @@
         =======================================-->
         <script>
             
-            document.addEventListener('DOMContentLoaded', function () {
+            {% comment %} document.addEventListener('DOMContentLoaded', function () {
                 const tabLinks = document.querySelectorAll('.tab-link');
             
                 tabLinks.forEach(function (link) {
@@ -933,7 +933,7 @@
                         }
                     });
                 });
-            });
+            }); {% endcomment %}
         </script>
     </body>
 </html>
