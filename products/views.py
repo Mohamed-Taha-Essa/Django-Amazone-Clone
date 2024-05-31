@@ -1,4 +1,6 @@
 from django.shortcuts import render ,redirect
+
+import settings
 from .models import Product ,Brand , Review,ProductImages
 from django.views.generic import ListView ,DetailView
 from django.db.models import Q,F,Value,Max
@@ -113,20 +115,20 @@ def mydebug(request):
 
 
 
-class ProductList(ListView):
-    model = Product
-    paginate_by =50
+# class ProductList(ListView):
+#     model = Product
+#     paginate_by =50
 
-    #if you only want to show the product that have quantity > 0
-    ''' 
-        def get_queryset(self):
-        queryset= super().get_queryset()
-        queryset =queryset.filter(quantity__gt=0)
-        return queryset
-    '''
-    def get_queryset(self):
-            # Retrieve and return products sorted by quantity (biggest quantity first)
-            return Product.objects.order_by('-quantity')
+#     #if you only want to show the product that have quantity > 0
+#     ''' 
+#         def get_queryset(self):
+#         queryset= super().get_queryset()
+#         queryset =queryset.filter(quantity__gt=0)
+#         return queryset
+#     '''
+#     def get_queryset(self):
+#             # Retrieve and return products sorted by quantity (biggest quantity first)
+#             return Product.objects.order_by('-quantity')
 
 class ProductDetail(DetailView):
     model = Product
@@ -204,3 +206,46 @@ def add_review(request,slug):
     page = render_to_string('includes/reviews.html',{'reviews':reviews})
     return JsonResponse({'result':page})
 
+class ProductList(ListView):
+    model = Product
+    paginate_by = 50
+    template_name = 'product_list.html'
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        min_price = self.request.GET.get('min_price')
+        max_price = self.request.GET.get('max_price')
+        if min_price:
+            queryset = queryset.filter(price__gte=min_price)
+        if max_price:
+            queryset = queryset.filter(price__lte=max_price)
+
+        queryset = queryset.order_by('-quantity')     
+        return queryset
+
+
+
+    def render_to_response(self, context, **response_kwargs):
+        is_ajax = self.request.headers.get('x-requested-with') == 'XMLHttpRequest'
+        context['is_ajax'] = is_ajax
+        if is_ajax:
+            products = list(context['object_list'])
+            products_with_image_url = []
+            for product in products:
+                product_with_image_url = {
+                    'id': product.id,
+                    'name': product.name,
+                    'price': product.price,
+                    'image_url': product.image.url if product.image else '',  # Ensure image URL is included
+                    'description': product.description,
+                    'flag': product.flag,
+                    'brand': product.brand,
+                    'avg_rate':product.avg_rate
+                    # Add other fields as needed
+                }
+                products_with_image_url.append(product_with_image_url)
+            page = render_to_string('includes/products_price.html', {'object_list': products_with_image_url})
+            return JsonResponse({'result': page})
+            
+        else:
+            return super().render_to_response(context, **response_kwargs)
