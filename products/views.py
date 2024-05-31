@@ -239,7 +239,8 @@ class ProductList(ListView):
                     'image_url': product.image.url if product.image else '',  # Ensure image URL is included
                     'description': product.description,
                     'flag': product.flag,
-                    'brand': product.brand
+                    'brand': product.brand,
+                    'avg_rate':product.avg_rate
                     # Add other fields as needed
                 }
                 products_with_image_url.append(product_with_image_url)

@@ -107,7 +107,7 @@ def payment_proces(request): #create invoice
         total = cart.total_with_coupon + delivery_fee
  
     else :
-        total =cart.total + delivery_fee
+        total =cart.cart_total + delivery_fee
     code = generate_code()
     
     #django sessions  to save small data in browser of user
