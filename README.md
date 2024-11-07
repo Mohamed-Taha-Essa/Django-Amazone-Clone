@@ -1,7 +1,7 @@
 
 # Django E-commerce Project
 
-A full-featured e-commerce application built with Django,restapi ,template, designed to deliver a seamless shopping experience. The project includes REST API endpoints,This project includes features like custom user authentication, profile management, dynamic cart updates with AJAX, Stripe integration for secure payment processing, coupon functionality, and order tracking. It leverages Django templates to create an intuitive frontend experience and follows a structured backend architecture for scalability.
+A full-featured e-commerce application built with Django,Django REST framework,Django-template..., designed to deliver a seamless shopping experience. The project includes REST API endpoints,This project includes features like custom user authentication, profile management, dynamic cart updates with AJAX, Stripe integration for secure payment processing, coupon functionality, and order tracking. It leverages Django templates to create an intuitive frontend experience and follows a structured backend architecture for scalability.
 
 
 ---
